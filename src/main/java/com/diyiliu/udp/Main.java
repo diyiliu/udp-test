@@ -10,18 +10,16 @@ import com.diyiliu.udp.netty.UdpServer;
 public class Main {
 
     public static void main(String[] args) {
-        String host = "localhost";
         int port = 5006;
 
-        if (args.length > 0){
-            port = Integer.parseInt(args[0]);
-        }
+        if (args.length > 1) {
+            new UdpServer().bind(args[0], Integer.parseInt(args[1]));
+        } else {
+            if (args.length > 0) {
+                port = Integer.parseInt(args[0]);
+            }
 
-        if (args.length > 1){
-            host = args[1];
+            new UdpServer().bind(port);
         }
-
-        // 多网卡时需要绑定IP
-        new UdpServer().bind(host, port);
     }
 }

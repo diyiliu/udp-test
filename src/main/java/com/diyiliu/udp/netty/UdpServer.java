@@ -17,6 +17,27 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UdpServer {
 
+    public void bind(int port) {
+        EventLoopGroup group = new NioEventLoopGroup();
+
+        try {
+            Bootstrap b = new Bootstrap();
+
+            b.group(group)
+                    .channel(NioDatagramChannel.class)
+                    .option(ChannelOption.SO_BROADCAST, true)
+                    .handler(new LogChannelHandler());
+
+            log.info("UDP服务器启动[{}]...", port);
+            b.bind(port).sync().channel().closeFuture().sync();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            log.info("UDP服务器已停止!");
+            group.shutdownGracefully();
+        }
+    }
+
     public void bind(String host, int port) {
         EventLoopGroup group = new NioEventLoopGroup();
 
