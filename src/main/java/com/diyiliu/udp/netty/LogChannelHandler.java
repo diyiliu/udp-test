@@ -29,16 +29,16 @@ public class LogChannelHandler extends ChannelInboundHandlerAdapter {
         byte[] bytes = new byte[buf.readableBytes()];
         buf.readBytes(bytes);
 
+//        String str = new String(bytes, "GBK");
+//        log.info("接收[{}]消息: [string={}, bytes={}]", remote, str, bytesToHex(bytes));
 
-        String str = new String(bytes, "GBK");
-        log.info("接收[{}]消息: [string={}, bytes={}]", remote, str, bytesToHex(str.getBytes()));
-
+        log.info("接收[{}]消息: [{}]", remote, bytesToHex(bytes));
         ctx.writeAndFlush(new DatagramPacket(Unpooled.copiedBuffer(bytes), packet.sender()));
     }
 
-    public String bytesToHex(byte[] bytes){
+    public String bytesToHex(byte[] bytes) {
         StringBuffer str = new StringBuffer();
-        for (byte b: bytes){
+        for (byte b : bytes) {
             str.append(String.format("%02X", b & 0xFF));
         }
 
