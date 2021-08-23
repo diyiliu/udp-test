@@ -13,12 +13,12 @@ public class ZipTest {
 
     @Test
     public void test() {
-        String str = "H4sIAAAAAAAAAF2Qy07DMBBFfyXyOkTjt51deQiEAlS0omwjZ0itJnGVJiCE+HecEirU3cyZe8d3" +
-                "/EVu94e1b5Hk5H5sEp0mDBgkLOcyFzpZPpCUXOO7d/gYoub1hnKAqwsa8QtuvWtw/bmPbnbqC+zq" +
-                "YUtymtET2/hqQjzjJ3SHvt4OJIcMUrIJ/e65rPx4ILmawCxaYfO2mYVScEb/zYpQVrM93rDs0fmD" +
-                "D930cERFOfhhrGIyYTNBueZaADVKxQRF6Op5SKnOmFbW8HgWUBA2JYvmz2qAZmoiXY3NtFhSA5YL" +
-                "pbQ0mpmUrPaIvyk4k9ZyY6XkoAF0dDmHDfYxyJTqGPSpxbqc60XfHveuPnxXn7HLENpz2eDd7lw2" +
-                "uh3+/uH3D5w4tlXKAQAA";
+        String str = "H4sIAAAAAAAAAF2Qy26DMBBFfwV5TSw/MDbsqBK1qtKHmijpFpkpsQI4ItCqqvrvHaeERSwv7Dtn" +
+                "7lz7h9yfzlvXAsnJ49hEJo4EEyziImcMd1Q8kZgs4dNZePYIvS9XXLCFQHUHB2cb2H6fsJvP9zV0" +
+                "9XBAhVM1i3tXBU3RdJYewNWHgeSMspjsfX98Kys3nkme0GSGNtB87CcQ54YV8OsoX1aTAT7jtQfr" +
+                "zs53iAZpXQ5uGCsMl2RUZlqLhDFuUqmx5rt6KnKuqdDScJGiO2cSpxfNtVUrQZXmjGPwoquhCeZG" +
+                "ZiphMhVSGZZJGZPNCQCjSGouGbkQwohUJatFcLMWGugxTsh2ifvSQl1O56JvL86bL9fVN9qd9+0t" +
+                "Njh7vMVGe4T/v/z9A0m3+7DTAQAA";
         System.out.println(str.length());
 
         str = GZIPUtils.uncompress(str);
@@ -29,10 +29,9 @@ public class ZipTest {
 
     @Test
     public void test2(){
-        String str = "H4sIAAAAAAAAAK1QQXLEMAj7krDAxs+Jsf3/J5TMZrvpKdNOdREagxCmsLOURWGlJ/NSQkWiz2h4" +
-                "wL7hqfevmLe6IPqrCkqD2mfr7gTv0VBP4sOVEHO1VDzHlWVSfpcvZoQH98kIRTrRLvNAapn6Y+Dy" +
-                "N4aVLj4OE8uWdUhZmWbbUPXUYTJclhum97dFhYQe2/l9+VwDB/hv/0/DaLpkt1cO1rkaqO+ce42W" +
-                "T71V7E8u4AsIr/n2UAIAAA==";
+        String str = "H4sIAAAAAAAAALWQUQ4DIQhErzQIKBxnBb3/Eeqm3cR+bbNJ38+AwcGRiZ1LGUxc2Zbyp1tg4RkN" +
+                "N8yNu9mn5FYXhF+1B0S3rcfX6DDQqXyTElATEV0nhVGSy5M3sgn54Z4uOJ07CyIjLAQGmbS70lt6" +
+                "OokVtaqkKdBZex8+hvUiJliXetYGJxNrcuVCUB0zeV6ptY3Gxn/7/195ATvavrRQAgAA";
 
         str = GZIPUtils.uncompress(str);
         System.out.println(str);
